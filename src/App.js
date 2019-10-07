@@ -1,16 +1,22 @@
-import React from 'react';
-import Wrapper from "./components/Wrapper";
+import React, { Component } from "react";
 import Navbar from "./components/Navbar";
+import Header from "./components/Header";
+import images from "./images.json"
 
-function App() {
-  return (
-    <div>
-      <Navbar />
-      <Wrapper>
-        Hello
-      </Wrapper>
-    </div>
-  );
+
+class App extends Component {
+  // Setting this.state.images to the images json array
+  state = {
+    images
+  };
+  render() {
+    return (
+      <div>
+        <Navbar />
+        <Header />
+      </div>
+    );
+  }
 }
 
 export default App;

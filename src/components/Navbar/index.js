@@ -1,14 +1,17 @@
 import React from "react";
 import "./style.css";
-
-// By importing the Navbar.css file, it is added to the DOM whenever this component loads
+import Correct from "../Correct";
+import Score from "../Score"
 
 function Navbar() {
   return (
     <nav className="navbar">
-      <a href="/">Welcome</a>
+      <a href="/" style={{color: "white", fontWeight: "bold"}}>Clicky Game</a>
+      <Correct />
+      <Score />
     </nav>
   );
 }
+
 
 export default Navbar;
