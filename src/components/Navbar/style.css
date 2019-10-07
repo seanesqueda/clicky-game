@@ -1,13 +1,9 @@
 .navbar {
-    padding-top: 50px;
-    font-size: 30px;
-    background: blue;
-    height: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    padding: 15px;
-    justify-content: space-around;
-    align-content: flex-start;
-    overflow: auto;
-  }
+  position: fixed;
+  width: 100%;
+  font-size: 30px;
+  background: blue;
+  padding: 20px 70px 20px 70px;
+  z-index: 99;
+}
   

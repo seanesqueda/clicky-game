@@ -4,7 +4,7 @@ import "./style.css";
 function Score() {
     return (
         <div className="score">
-            Score: | Top Score: 
+            Score: 0 | Top Score: 0
         </div>
 
     )

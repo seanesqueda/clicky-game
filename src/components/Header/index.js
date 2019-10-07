@@ -5,8 +5,7 @@ function Header() {
   return (
     <div className="header">
       Clicky Game!
-      <br></br>
-      Click on an image to earn points, but don't click on any more than once!
+      <div style={{fontSize: "30px", fontWeight: "500", padding: "35px"}}>Click on an image to earn points, but don't click on any more than once!</div>
     </div>
   );
 }
