@@ -3,12 +3,15 @@ import "./style.css";
 import Correct from "../Correct";
 import Score from "../Score"
 
-function Navbar() {
+function Navbar(props) {
   return (
     <nav className="navbar">
       <a href="/" style={{color: "white", fontWeight: "bold"}}>Clicky Game</a>
-      <Correct />
-      <Score />
+      <Correct message={props.message}/>
+      <Score 
+      currentScore={props.currentScore}
+      topScore={props.topScore}
+      />
     </nav>
   );
 }

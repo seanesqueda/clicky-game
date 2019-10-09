@@ -1,10 +1,10 @@
 import React from "react";
 import "./style.css";
 
-function Correct() {
+function Correct(props) {
     return (
       <div className="correct">
-          Click an Image to Begin!
+          {props.message}
       </div>  
     );
 }

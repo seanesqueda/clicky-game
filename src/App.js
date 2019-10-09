@@ -12,9 +12,10 @@ class App extends Component {
   // Setting this.state.images to the images json array
   state = {
     images: images,
+    currentScore: 0,
     topScore: 0,
     pickedImages: [],
-    alert: ""
+    message: "Pick an image to begin!"
   };
 
   //Boilerplate for shuffing an array
@@ -35,29 +36,49 @@ class App extends Component {
 
   //Pick an image and check if it has been picked before
   handlePickedImage = (event) => {
-    const name = event.target.name;
-    let pickedImages = this.state.pickedImages
+    const name = event.target.alt;
+    let pickedImages = this.state.pickedImages;
+    let currentScore = this.state.currentScore;
+    let topScore = this.state.topScore;
+    let message = this.state.message;
     if (pickedImages.includes(name)) {
-      pickedImages = []
-      alert("This has been picked")
+      pickedImages = [];
+      currentScore = 0;
+      message = "You guess wrong. Try again!";
     }
     else {
       pickedImages.push(name);
-      alert("Keep going!")
-    }
-    this.setState({pickedImages: pickedImages})
+      currentScore++;
+      message = "You guessed correctly. Keep going!";
+      if (currentScore > topScore) {
+        topScore = currentScore
+      };
+      if (currentScore === 12) {
+        message = "CONGRATS YOU WIN!!!"
+        pickedImages = [];
+        currentScore = 0;
+      }
+    };
+    console.log(name)
+    this.setState({pickedImages: pickedImages});
+    this.setState({currentScore: currentScore});
+    this.setState({topScore: topScore})
+    this.setState({message: message});
     this.shuffleImages();
   }
 
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar 
+        currentScore={this.state.currentScore}
+        topScore={this.state.topScore}
+        message={this.state.message}
+        />
         <Header />
         <div className="container">
           {this.state.images.map(image => (
             <Card
-              id={image.id}
               key={image.id}
               name={image.name}
               image={image.image}
