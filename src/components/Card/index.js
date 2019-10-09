@@ -3,9 +3,15 @@ import "./style.css";
 
 function Card(props) {
     return (
-            <div className="card">
-                <img alt={props.name} src={props.image} />
-            </div>
+        <div className="card">
+            <input
+                className="inputCard"
+                type="image"
+                alt={props.name}
+                src={props.image} 
+                onClick={props.onClick}
+            />
+        </div>
     );
 }
 
